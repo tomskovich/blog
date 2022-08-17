@@ -14,18 +14,32 @@ Some examples:
 ```powershell
 # INPUT
 New-Password
-```
-```txt
 # OUTPUT
 PerfectStory!4985
 ```
-
+```powershell
 # INPUT
 New-Password -Language NL -Count 2
 # OUTPUT
 ZaakGevangenis#7638
 VerliezenPopulair@1683
 ```
+```powershell
+# INPUT
+New-Password -WordListFile 'C:\Temp\MyOwnCustomWordlist.txt'
+# OUTPUT
+CustomWords#7638
+```
+```powershell
+# INPUT
+New-Password -Count 2 -NumberCount 5 -CharacterCount 3
+# OUTPUT
+BridgeMarry#@$32968
+SilverSkill@#%83791
+```
+
+
+
 
 See below for the full function:
 
@@ -65,12 +79,13 @@ function New-Password {
         # Amount of numbers to use in password
         [int] $NumberCount = 4,
 
+        # Amount of special characters to use
+        [Alias('CharCount')]
+        [int] $CharacterCount = 1,
+
         # Range of numbers to use in password
         [array] $NumberRange = 1..9,
 
-        # Amount of special characters to use
-        [int] $CharCount = 1,
-        
         # Special characters to use in password
         [array] $Characters = '!,@,#,$,%' -split ','
     )
@@ -110,7 +125,7 @@ function New-Password {
                     }
                 )
                 # Generate random special character(s)
-                $RandomCharacters = -join (Get-Random -InputObject $Characters -Count $CharCount)
+                $RandomCharacters = -join (Get-Random -InputObject $Characters -Count $CharacterCount)
                 # Generate random number
                 $RandomNumbers = -join (Get-Random -InputObject $NumberRange -Count $NumberCount)
                 # Join everything to create final password
