@@ -6,6 +6,16 @@ defaultContentLanguage = "en"
 paginate = 20
 enableEmoji = true
 
+[params]
+    author = "Tom de Leeuw"
+    description = "Tom's Tech Blog"
+    keywords = "blog,developer,personal"
+    info = ["IT Strijder"]
+    dateFormat = "January 2, 2006"
+    since = 2022
+    colorScheme = "dark"
+    avatarURL = "https://avatars.githubusercontent.com/u/36704245?v=4"
+
 [markup]
   [markup.highlight]
     anchorLineNos = false
@@ -21,16 +31,6 @@ enableEmoji = true
     noHl = false
     style = 'monokai'
     tabWidth = 4
-
-[params]
-    author = "Tom de Leeuw"
-    description = "Tom's Tech Blog"
-    keywords = "blog,developer,personal"
-    info = ["IT Strijder"]
-    dateFormat = "January 2, 2006"
-    since = 2022
-    colorScheme = "dark"
-    avatarURL = "https://avatars.githubusercontent.com/u/36704245?v=4"
 
 [taxonomies]
   category = "categories"
