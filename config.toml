@@ -19,7 +19,7 @@ enableEmoji = true
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'fruity'
+    style = 'native'
     tabWidth = 4
 
 [params]
