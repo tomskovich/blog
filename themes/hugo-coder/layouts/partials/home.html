@@ -5,17 +5,17 @@
     {{ partialCached "home/author.html" . }}
 
     {{ partialCached "home/social.html" . }}
+    {{ .Content }}
+    <ul>
+      {{ range .Paginator.Pages }}
+      <li>
+        <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }}
   </div>
 
   {{ partialCached "home/extensions.html" . }}
-  {{ .Content }}
-  <ul>
-    {{ range .Paginator.Pages }}
-    <li>
-      <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-      <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-    </li>
-    {{ end }}
-  </ul>
-  {{ partial "pagination.html" . }}
 </section>
