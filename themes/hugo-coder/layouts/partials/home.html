@@ -6,6 +6,10 @@
 
     {{ partialCached "home/social.html" . }}
     {{ .Content }}
+    <br>
+    <h1 class="title">LATEST POSTS</h1>
+    <br>
+    {{ partial "pagination.html" . }}
     <ul>
       {{ range .Paginator.Pages }}
       <li>
@@ -14,10 +18,6 @@
       </li>
       {{ end }}
     </ul>
-    <br>
-    <h1 class="title">LATEST POSTS</h1>
-    <br>
-    {{ partial "pagination.html" . }}
   </div>
 
   {{ partialCached "home/extensions.html" . }}
