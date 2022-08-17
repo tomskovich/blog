@@ -1,6 +1,6 @@
 baseURL = 'https://tech-tom.com/'
 title = 'Toms Tech Blog'
-theme = 'hugo-coder'
+theme = 'm10c'
 languageCode = 'en'
 defaultContentLanguage = "en"
 paginate = 20
