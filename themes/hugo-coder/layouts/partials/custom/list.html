@@ -1,13 +1,4 @@
 <section class="container list">
-  <h1 class="title">
-    <a class="title-link" href="{{ .Permalink | safeURL }}">
-      {{- if eq .Kind "term" -}}
-        {{- i18n .Data.Plural 1 | title -}}
-        {{- print ": " -}}
-      {{- end -}}
-      {{- i18n (upper .Title) | default .Title | title -}}
-    </a>
-  </h1>
   {{ .Content }}
   <ul>
     {{ range .Paginator.Pages }}
