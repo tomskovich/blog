@@ -5,6 +5,7 @@ theme = 'hugo-coder'
 defaultContentLanguage = "en"
 paginate = 20
 enableEmoji = true
+colorScheme = "dark"
 
 [markup]
   [markup.highlight]
