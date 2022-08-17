@@ -1,7 +1,13 @@
 baseURL = 'https://tech-tom.com/'
-languageCode = 'en-us'
+languageCode = 'en'
 title = 'Toms Tech Blog'
 theme = 'hugo-coder'
+defaultContentLanguage = "en"
+paginate = 20
+pygmentsStyle = "bw"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+enableEmoji = true
 
 [params]
 author = "Tom de Leeuw"
