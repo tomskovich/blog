@@ -1,10 +1,11 @@
 ---
-title: "PowerShell Function - New-Password"
+title: "PowerShell - Password Generator"
 date: 2022-08-17T12:50:06+02:00
 draft: false
 ---
 
-Ewa check deze!
+This PowerShell function generates one or more "random" human-readable passwords.
+
 
 ```powershell
 <#
