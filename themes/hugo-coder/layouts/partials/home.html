@@ -5,20 +5,23 @@
     {{ partialCached "home/author.html" . }}
 
     {{ partialCached "home/social.html" . }}
-    {{ .Content }}
-    <br>
-    <h1 class="title">LATEST POSTS</h1>
-    <h1>LATEST POSTS</h1>
-    <br>
-    {{ partial "pagination.html" . }}
-    <ul>
-      {{ range .Paginator.Pages }}
-      <li>
-        <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-      </li>
-      {{ end }}
-    </ul>
+    <section class="container list">
+      {{ .Content }}
+      <br>
+      <h1 class="title">LATEST POSTS</h1>
+      <h1>LATEST POSTS</h1>
+      <br>
+      {{ partial "pagination.html" . }}
+      <ul>
+        {{ range .Paginator.Pages }}
+        <li>
+          <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+          <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+
   </div>
 
   {{ partialCached "home/extensions.html" . }}
