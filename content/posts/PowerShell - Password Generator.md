@@ -6,7 +6,7 @@ draft: false
 
 This PowerShell function enerates one or more "random" human-readable passwords, with some options for complexity and language.
 
-By default, this function will use a wordlist hosted on my GitHub.
+By default, this function will use a wordlist hosted on my [GitHub](https://github.com/tomskovich/).
 If you'd like to use your own (offline) wordlist, use the "-WordlistFile" parameter.
 
 Some examples:
@@ -14,8 +14,11 @@ Some examples:
 ```powershell
 # INPUT
 New-Password
+```
+```txt
 # OUTPUT
 PerfectStory!4985
+```
 
 # INPUT
 New-Password -Language NL -Count 2
