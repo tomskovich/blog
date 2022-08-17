@@ -19,7 +19,7 @@ enableEmoji = true
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokai'
+    style = 'fruity'
     tabWidth = 4
 
 [params]
@@ -32,7 +32,6 @@ since = 2022
 
 [taxonomies]
 category = "categories"
-series = "series"
 tag = "tags"
 author = "authors"
 
@@ -43,30 +42,10 @@ weight = 1
 url = "https://github.com/johndoe/"
 
 [[params.social]]
-name = "Twitter"
-icon = "fa fa-2x fa-twitter"
-weight = 3
-url = "https://twitter.com/johndoe/"
-
-[[params.social]]
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
 weight = 4
 url = "https://www.linkedin.com/in/johndoe/"
-
-[[params.social]]
-name = "Medium"
-icon = "fa fa-2x fa-medium"
-weight = 5
-url = "https://medium.com/@johndoe"
-
-[[params.social]]
-name = "RSS"
-icon = "fa fa-2x fa-rss"
-weight = 6
-url = "https://myhugosite.com/index.xml"
-rel = "alternate"
-type = "application/rss+xml"
 
 [languages.en]
 languageName = ":uk:"
@@ -88,5 +67,5 @@ url = "projects/"
 
 [[languages.en.menu.main]]
 name = "Contact me"
-weight = 5
+weight = 4
 url = "contact/"
