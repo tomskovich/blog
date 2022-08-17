@@ -31,6 +31,7 @@ enableEmoji = true
     since = 2022
     colorScheme = "dark"
     avatarURL = "https://avatars.githubusercontent.com/u/36704245?v=4"
+    mainSections = ["post"]
 
 [taxonomies]
 category = "categories"
