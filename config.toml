@@ -1,5 +1,5 @@
 baseURL = 'https://tech-tom.com/'
-title = 'Toms Tech Blog'
+title = "Tom's Tech Blog"
 theme = 'hugo-coder'
 languageCode = 'en'
 defaultContentLanguage = "en"
@@ -24,7 +24,7 @@ enableEmoji = true
 
 [params]
     author = "Tom de Leeuw"
-    description = "Toms Tech Blog"
+    description = "Tom's Tech Blog"
     keywords = "blog,developer,personal"
     info = ["IT Strijder"]
     dateFormat = "January 2, 2006"
@@ -33,36 +33,36 @@ enableEmoji = true
     avatarURL = "https://avatars.githubusercontent.com/u/36704245?v=4"
 
 [taxonomies]
-category = "categories"
-tag = "tags"
-author = "authors"
+  category = "categories"
+  tag = "tags"
+  author = "authors"
 
 [[params.social]]
-name = "Github"
-icon = "fa fa-2x fa-github"
-weight = 1
-url = "https://github.com/johndoe/"
+  name = "Github"
+  icon = "fa fa-2x fa-github"
+  weight = 1
+  url = "https://github.com/johndoe/"
 
 [[params.social]]
-name = "LinkedIn"
-icon = "fa fa-2x fa-linkedin"
-weight = 4
-url = "https://www.linkedin.com/in/johndoe/"
+  name = "LinkedIn"
+  icon = "fa fa-2x fa-linkedin"
+  weight = 4
+  url = "https://www.linkedin.com/in/johndoe/"
 
 [languages.en]
-languageName = ":uk:"
+  languageName = ":uk:"
 
 [[languages.en.menu.main]]
-name = "Blog"
-weight = 1
-url = "posts/"
+  name = "Blog"
+  weight = 1
+  url = "posts/"
 
 [[languages.en.menu.main]]
-name = "Projects"
-weight = 2
-url = "projects/"
+  name = "Projects"
+  weight = 2
+  url = "projects/"
 
 [[languages.en.menu.main]]
-name = "Contact me"
-weight = 3
-url = "contact/"
+  name = "Contact"
+  weight = 3
+  url = "contact/"
