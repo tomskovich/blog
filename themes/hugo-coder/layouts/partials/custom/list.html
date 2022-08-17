@@ -5,7 +5,7 @@
         {{- i18n .Data.Plural 1 | title -}}
         {{- print ": " -}}
       {{- end -}}
-      {{- i18n (lower .Title) | default .Title | title -}}
+      {{- i18n (upper .Title) | default .Title | title -}}
     </a>
   </h1>
   {{ .Content }}
