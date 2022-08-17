@@ -1,17 +1,13 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://tech-tom.com/'
 languageCode = 'en-us'
-title = 'Tom's Tech Blog'
+title = 'Toms Tech Blog'
 theme = 'hugo-coder'
-
 
 [params]
 author = "Tom de Leeuw"
-# license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "Tom's Tech Blog"
+description = "Toms Tech Blog"
 keywords = "blog,developer,personal"
 info = ["IT Magician"]
-#avatarURL = "https://avatars.githubusercontent.com/u/1256531?v=4"
-#gravatar = "tom@ucsystems.nl"
 dateFormat = "January 2, 2006"
 since = 2022
 
