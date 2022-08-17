@@ -4,8 +4,27 @@ date: 2022-08-17T12:50:06+02:00
 draft: false
 ---
 
-This PowerShell function generates one or more "random" human-readable passwords.
+This PowerShell function enerates one or more "random" human-readable passwords, with some options for complexity and language.
 
+By default, this function will use a wordlist hosted on my GitHub.
+If you'd like to use your own (offline) wordlist, use the "-WordlistFile" parameter.
+
+Some examples:
+
+```powershell
+# INPUT
+New-Password
+# OUTPUT
+PerfectStory!4985
+
+# INPUT
+New-Password -Language NL -Count 2
+# OUTPUT
+ZaakGevangenis#7638
+VerliezenPopulair@1683
+```
+
+See below for the full function:
 
 ```powershell
 <#
@@ -13,22 +32,29 @@ This PowerShell function generates one or more "random" human-readable passwords
     Generates one or more "random" human-readable passwords
 
     .EXAMPLE
-    New-Password -PassCount 10
+    New-Password -Count 10
 
     .NOTES
     Author:   Tom de Leeuw
     Website:  https://ucsystems.nl
 #>
 function New-Password {
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName = 'Default')]
     Param(
+        # Language to use
+        [Parameter(ParameterSetName = 'Default')]
+        [ValidateSet('NL', 'EN')]
+        [string] $Language = 'EN',
+
         # Path to file with words to use
+        [Parameter(ParameterSetName = 'Custom')]
         [ValidateScript({ Test-Path -Path $_ })]
         [Alias('Path', 'WordList', 'File', 'SourceFile')]
         [string] $WordListFile,
-    
+
         # Amount of passwords to generate
-        [int] $PassCount = 1,
+        [Alias('PasswordCount', 'PassCount')]
+        [int] $Count = 1,
     
         # Amount of words to use when generating password
         [int] $WordCount = 2,
@@ -36,18 +62,19 @@ function New-Password {
         # Amount of numbers to use in password
         [int] $NumberCount = 4,
 
-        # Amount of special characters to use
-        [int] $CharCount = 1,
-    
         # Range of numbers to use in password
         [array] $NumberRange = 1..9,
-    
+
+        # Amount of special characters to use
+        [int] $CharCount = 1,
+        
         # Special characters to use in password
-        [array] $SpecialChars = '!,@,#,$,%' -split ','
+        [array] $Characters = '!,@,#,$,%' -split ','
     )
 
     begin {
-        if ($PSBoundParameters.ContainsKey('WordListFile')) {
+        # Parameter validation
+        if ($WordListFile) {
             try {
                 $WordList = Get-Content -Path $WordListFile
             }
@@ -55,22 +82,24 @@ function New-Password {
                 throw "No wordlist found! Verify if $WordList exists."
             }
         }
-        else {
+        if ($Language) {
+            $URL = "https://raw.githubusercontent.com/tomskovich/Public/main/src/Wordlists/$($Language).txt"
             try {
-                $WordListURL = Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/tomskovich/Public/main/src/Wordlists/WordList_Dutch.txt'
-                $WordList = $WordListURL.Content.Trim().split("`n")
+                $Request  = Invoke-WebRequest -Uri $URL
+                $WordList = $Request.Content.Trim().split("`n")
             }
             catch {
-                throw "No wordlist found! Verify if $WordList exists."
+                throw "Error getting wordlist from $URL"
             }
         }
-        
+
+        # Create arraylist for output 
         $Passwords = New-Object System.Collections.ArrayList
     }
 
     process {
         try {
-            foreach ($i in 1..$PassCount) {
+            foreach ($i in 1..$Count) {
                 # Get random word(s) from list, then title-case each word
                 $RandomWords = -join (
                     Get-Random -InputObject $WordList -Count $WordCount).ForEach({
@@ -78,16 +107,17 @@ function New-Password {
                     }
                 )
                 # Generate random special character(s)
-                $RandomChars = -join (Get-Random -InputObject $SpecialChars -Count $CharCount)
+                $RandomCharacters = -join (Get-Random -InputObject $Characters -Count $CharCount)
                 # Generate random number
-                $RandomNums = -join (Get-Random -InputObject $NumberRange -Count $NumberCount)
+                $RandomNumbers = -join (Get-Random -InputObject $NumberRange -Count $NumberCount)
                 # Join everything to create final password
                 $Password = -join (
                     $RandomWords,
-                    $RandomChars,
-                    $RandomNums
+                    $RandomCharacters,
+                    $RandomNumbers
                 )
-                [void]$Passwords.Add($Password)
+                # Add password to collection but hide output
+                [void] $Passwords.Add($Password)
             }
         }
         catch {
