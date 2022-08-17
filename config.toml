@@ -5,13 +5,13 @@ theme = 'hugo-coder'
 defaultContentLanguage = "en"
 paginate = 20
 enableEmoji = true
-colorScheme = "dark"
+
 
 [markup]
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
-    guessSyntax = false
+    guessSyntax = true
     hl_Lines = ''
     hl_inline = false
     lineAnchors = ''
@@ -30,6 +30,7 @@ keywords = "blog,developer,personal"
 info = ["IT Magician"]
 dateFormat = "January 2, 2006"
 since = 2022
+colorScheme = "dark"
 
 [taxonomies]
 category = "categories"
