@@ -4,56 +4,45 @@ date: 2022-08-17T12:50:06+02:00
 draft: false
 ---
 
-This PowerShell function enerates one or more "random" human-readable passwords, with some options for complexity and language.
+This PowerShell function generates one or more "random" human-readable passwords, with some options for complexity and language.
 
 By default, this function will use a wordlist hosted on my [GitHub](https://github.com/tomskovich/).
-If you'd like to use your own (offline) wordlist, use the "-WordlistFile" parameter.
+If you'd like to use your own (offline) wordlist, use the "-WordlistFile <path>" parameter, or change the URL in the function.
 
 Some examples:
 
 ```powershell
-# INPUT
-New-Password
-# OUTPUT
-PerfectStory!4985
-```
-```powershell
-# INPUT
-New-Password -Language NL -Count 2
-# OUTPUT
-ZaakGevangenis#7638
-VerliezenPopulair@1683
-```
-```powershell
-# INPUT
-New-Password -WordListFile 'C:\Temp\MyOwnCustomWordlist.txt'
-# OUTPUT
-CustomWords#7638
-```
-```powershell
-# INPUT
 New-Password -Count 2 -NumberCount 5 -CharacterCount 3
+```
+```txt
 # OUTPUT
 BridgeMarry#@$32968
 SilverSkill@#%83791
 ```
+```powershell
+New-Password -WordListFile 'C:\Temp\MyOwnCustomWordlist.txt'
+```
+```txt
+# OUTPUT
+CustomWords#7638
+```
 
-
-
-
-See below for the full function:
+See below for the full function, or directly on my [GitHub](https://github.com/tomskovich/PowerShell/blob/main/Functions/New-Password.ps1).
 
 ```powershell
 <#
     .SYNOPSIS
-    Generates one or more "random" human-readable passwords
+    Generates one or more "random" human-readable passwords. Default language is English.
+
+    .LINK
+    https://tech-tom.com/posts/powershell-password-generator/
 
     .EXAMPLE
     New-Password -Count 10
 
     .NOTES
     Author:   Tom de Leeuw
-    Website:  https://ucsystems.nl
+    Website:  https://tech-tom.com / https://ucsystems.nl
 #>
 function New-Password {
     [CmdletBinding(DefaultParameterSetName = 'Default')]
@@ -62,6 +51,11 @@ function New-Password {
         [Parameter(ParameterSetName = 'Default')]
         [ValidateSet('NL', 'EN')]
         [string] $Language = 'EN',
+
+        # URL to get wordlist from
+        [Parameter(ParameterSetName = 'Default')]
+        [ValidateNotNullOrEmpty()]
+        [string] $URL = "https://raw.githubusercontent.com/tomskovich/Public/main/src/Wordlists/$($Language).txt",
 
         # Path to file with words to use
         [Parameter(ParameterSetName = 'Custom')]
@@ -101,7 +95,6 @@ function New-Password {
             }
         }
         if ($Language) {
-            $URL = "https://raw.githubusercontent.com/tomskovich/Public/main/src/Wordlists/$($Language).txt"
             try {
                 $Request  = Invoke-WebRequest -Uri $URL
                 $WordList = $Request.Content.Trim().split("`n")
@@ -110,41 +103,35 @@ function New-Password {
                 throw "Error getting wordlist from $URL"
             }
         }
-
         # Create arraylist for output 
         $Passwords = New-Object System.Collections.ArrayList
-    }
+    } # end of "Begin" block
 
     process {
-        try {
-            foreach ($i in 1..$Count) {
-                # Get random word(s) from list, then title-case each word
-                $RandomWords = -join (
-                    Get-Random -InputObject $WordList -Count $WordCount).ForEach({
-                        (Get-Culture).TextInfo.ToTitleCase($_)
-                    }
-                )
-                # Generate random special character(s)
-                $RandomCharacters = -join (Get-Random -InputObject $Characters -Count $CharacterCount)
-                # Generate random number
-                $RandomNumbers = -join (Get-Random -InputObject $NumberRange -Count $NumberCount)
-                # Join everything to create final password
-                $Password = -join (
-                    $RandomWords,
-                    $RandomCharacters,
-                    $RandomNumbers
-                )
-                # Add password to collection but hide output
-                [void] $Passwords.Add($Password)
-            }
-        }
-        catch {
-            Write-Error $_
-        }
-    }
+        foreach ($i in 1..$Count) {
+            # Get random word(s) from list, then title-case each word
+            $RandomWords = -join (
+                Get-Random -InputObject $WordList -Count $WordCount).ForEach({
+                    (Get-Culture).TextInfo.ToTitleCase($_)
+                }
+            )
+            # Generate random special character(s)
+            $RandomCharacters = -join (Get-Random -InputObject $Characters -Count $CharacterCount)
+            # Generate random number
+            $RandomNumbers = -join (Get-Random -InputObject $NumberRange -Count $NumberCount)
+            # Join everything to create final password
+            $Password = -join (
+                $RandomWords,
+                $RandomCharacters,
+                $RandomNumbers
+            )
+            # Add password to collection but hide output
+            [void] $Passwords.Add($Password)
+        } # end Foreach
+    } # end of "Process" block
 
     end {
         return $Passwords
-    }
+    } # end of "End" block
 }
 ```

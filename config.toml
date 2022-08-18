@@ -31,7 +31,7 @@ enableEmoji = true
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'dracula'
+    style = 'monokai'
     tabWidth = 4
 
 [taxonomies]
