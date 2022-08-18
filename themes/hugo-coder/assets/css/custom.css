@@ -1,0 +1,37 @@
+.avatar img {
+  width: 15rem !important;
+  height: auto;
+  border-radius: 50%;  
+  @media only screen and (max-width: 768px) {
+    width: 10rem;
+  }
+}
+
+hr {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 1) !important;
+}
+
+.list h1 {
+  margin: 1rem 0 2.5rem 0 !important;
+}
+
+.list ul li .date {
+  flex: unset;
+}
+
+.centered .about h1 {
+  margin-top: 0rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.centered .about h2 {
+  margin-top: -0.2rem !important;
+  font-size: 2.2rem !important;
+}
+
+.centered .about ul li a {
+  font-size: 1.3rem !important;
+}
