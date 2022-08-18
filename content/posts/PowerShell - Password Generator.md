@@ -50,6 +50,7 @@ function New-Password {
         # Language to use
         [Parameter(ParameterSetName = 'Default')]
         [ValidateSet('NL', 'EN')]
+        [ValidateNotNullOrEmpty()]
         [string] $Language = 'EN',
 
         # URL to get wordlist from
