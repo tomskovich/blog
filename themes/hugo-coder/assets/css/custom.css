@@ -7,6 +7,13 @@
   }
 }
 
+hr {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 1) !important;
+}
+
 .list h1 {
   margin: 1rem 0 2.5rem 0 !important;
 }
