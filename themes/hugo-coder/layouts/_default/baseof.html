@@ -3,6 +3,8 @@
   <head>
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{ partial "head.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
   </head>
 
 {{ $csClass := "colorscheme-light" }}

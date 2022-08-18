@@ -18,6 +18,9 @@ enableEmoji = true
     #customSCSS = ["css/custom.scss"]
     customCSS = ["css/custom.css"]
 
+[params.googleTagManager]
+    id = "G-T00DJJN637"
+
 [markup]
   [markup.highlight]
     anchorLineNos = false
