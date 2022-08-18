@@ -7,10 +7,10 @@ paginate = 20
 enableEmoji = true
 
 [params]
-    author = "Tom de Leeuw"
+    author = "TOM DE LEEUW"
     description = "Tom's Tech Blog"
     keywords = "blog,developer,personal"
-    info = ["Automation Proletarian"]
+    info = ["Automation Warrior"]
     dateFormat = "January 2, 2006"
     since = 2022
     colorScheme = "dark"
