@@ -31,7 +31,7 @@ enableEmoji = true
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'monokai'
+    style = 'github'
     tabWidth = 4
 
 [taxonomies]
