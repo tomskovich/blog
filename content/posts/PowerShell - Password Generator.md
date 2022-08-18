@@ -27,7 +27,7 @@ New-Password -WordListFile 'C:\Temp\MyOwnCustomWordlist.txt'
 CustomWords#7638
 ```
 
-See below for the full function, or directly on my [GitHub](https://github.com/tomskovich/PowerShell/blob/main/Functions/New-Password.ps1).
+See below for the full function, or directly on my [GitHub](https://github.com/tomskovich/Public/blob/main/PowerShell/Functions/New-Password.ps1).
 
 ```powershell
 <#
