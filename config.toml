@@ -14,7 +14,7 @@ enableEmoji = true
     dateFormat = "January 2, 2006"
     since = 2022
     colorScheme = "dark"
-    avatarURL = "https://avatars.githubusercontent.com/u/36704245?s=400&u=8786af3c7e799e45eb78f9067d1ff2c6f189ec9e&v=4"
+    avatarURL = "https://avatars.githubusercontent.com/u/36704245?s=400&u=443838ef61f16d65cb2933fb69ca9a68abf2b687&v=4"
     #customSCSS = ["css/custom.scss"]
     customCSS = ["css/custom.css"]
 
