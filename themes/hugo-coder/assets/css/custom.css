@@ -32,12 +32,6 @@ hr {
   font-size: 2.2rem !important;
 }
 
-.centered .about ul {
-  list-style: none;
-  margin: 1rem 0 0.5rem 0;
-  padding: 0;
-}
-
 .centered .about ul li a {
   font-size: 1.3rem !important;
 }
