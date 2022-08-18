@@ -1,0 +1,36 @@
+baseURL: 'https://tech-tom.com/'
+
+theme: 'PaperMod'
+languageCode: 'en'
+defaultContentLanguage: "en"
+paginate: 20
+enableEmoji: true
+
+googleAnalytics: UA-123-45
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: "TECH-TOM"
+  description: "Tom's Tech Blog"
+  keywords: [blog,developer,personal]
+  author: TOM DE LEEUW
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: dark # dark, light
+  disableThemeToggle: false
+  
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
