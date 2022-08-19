@@ -7,7 +7,7 @@ paginate = 20
 enableEmoji = true
 pygmentsCodeFences=true
 googleAnalytics = 'UA-238022325-1'
-
+googleAnalytics = 'G-XL3Z144WWX'
 [params]
 env = "production"
 author = "TOM DE LEEUW"
@@ -53,7 +53,7 @@ imageHeight = 120
 imageTitle = "TECH-TOM"
 
 [params.googleTagManager]
-    id = "G-T00DJJN637"
+    id = "G-XL3Z144WWX"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON" ]
