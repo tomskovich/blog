@@ -19,10 +19,10 @@ defaultTheme = "dark"
 ShowReadingTime = false
 ShowWordCount = false
 ShowBreadCrumbs = true
-ShowPostNavLinks = true
+ShowPostNavLinks = false
 ShowCodeCopyButtons = true
 showtoc = true
-UseHugoToc = true
+UseHugoToc = false
 
 [params.homeInfoParams]
 Title = "TECH-TOM"
