@@ -6,6 +6,7 @@ defaultContentLanguage = "en"
 paginate = 20
 enableEmoji = true
 pygmentsCodeFences=true
+googleAnalytics = 'UA-238022325-1'
 
 [params]
 env = "production"
