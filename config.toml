@@ -37,10 +37,10 @@ name = "LinkedIn"
 url = "https://www.linkedin.com/in/tom-de-leeuw-32a971104/"
 
 [params.assets]
-favicon = "https://github.com/tomskovich/blog/blob/main/themes/PaperMod/assets/favicon.ico"
-favicon16x16 = "https://github.com/tomskovich/blog/blob/main/themes/PaperMod/assets/favicon-16x16.png"
-favicon32x32 = "https://github.com/tomskovich/blog/blob/main/themes/PaperMod/assets/favicon-32x32.png"
-apple_touch_icon = "https://github.com/tomskovich/blog/blob/main/themes/PaperMod/assets/apple-touch-icon.png"
+favicon = "favicon.ico"
+favicon16x16 = "favicon-16x16.png"
+favicon32x32 = "favicon-32x32.png"
+apple_touch_icon = "apple-touch-icon.png"
 
 [params.profileMode]
 enabled = false
