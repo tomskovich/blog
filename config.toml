@@ -8,6 +8,7 @@ enableEmoji = true
 pygmentsCodeFences=true
 googleAnalytics = 'UA-238022325-1'
 #googleAnalytics = 'G-XL3Z144WWX'
+
 [params]
 env = "production"
 author = "TOM DE LEEUW"
@@ -26,7 +27,7 @@ showtoc = false
 UseHugoToc = false
 
 [params.homeInfoParams]
-Title = "TECH-TOM"
+Title = "Tom de Leeuw"
 Content = "Automation Warrior"
 
 [[params.socialIcons]]
@@ -44,13 +45,21 @@ favicon32x32 = "favicon-32x32.png"
 apple_touch_icon = "apple-touch-icon.png"
 
 [params.profileMode]
-enabled = false
+enabled = true
 title = "TECH-TOM"
 subtitle = "Automation Warrior"
 imageUrl = "avatar.png"
-imageWidth = 120
-imageHeight = 120
+imageWidth = 200
+imageHeight = 200
 imageTitle = "TECH-TOM"
+
+[[params.profileMode.buttons]]
+name = "Posts"
+url = "/posts"
+
+[[params.profileMode.buttons]]
+name = "Tags"
+url = "/tags"
 
 [params.googleTagManager]
     id = "G-XL3Z144WWX"
