@@ -3,3 +3,11 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
+
+main {
+    --main-width: 1000px;
+}
+
+.post-content a {
+    color: #ed9d13;
+}

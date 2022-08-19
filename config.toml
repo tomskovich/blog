@@ -5,6 +5,7 @@ languageCode = 'en'
 defaultContentLanguage = "en"
 paginate = 20
 enableEmoji = true
+pygmentsCodeFences=true
 
 [params]
 env = "production"
@@ -65,8 +66,8 @@ home = [ "HTML", "RSS", "JSON" ]
     hl_inline = false
     lineAnchors = ''
     lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
+    lineNos = true
+    lineNumbersInTable = false
     noClasses = true
     noHl = false
     style = 'native'
