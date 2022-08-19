@@ -4,7 +4,7 @@ date: 2022-08-19T10:40:06+02:00
 tags: ['Powershell', 'Module', 'API', 'DNS']
 draft: false
 ---
-## Introduction
+## INTRODUCTION
 `IMPORTANT: This module is still a work in progress!`
 
 At my current job, we use [OpenProvider](https://openprovider.com) as our main domain registrar and DNS provider.

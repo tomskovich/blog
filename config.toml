@@ -21,7 +21,7 @@ ShowWordCount = false
 ShowBreadCrumbs = true
 ShowPostNavLinks = false
 ShowCodeCopyButtons = true
-showtoc = true
+showtoc = false
 UseHugoToc = false
 
 [params.homeInfoParams]
@@ -94,11 +94,21 @@ home = [ "HTML", "RSS", "JSON" ]
   languageName = ":uk:"
 
 [[languages.en.menu.main]]
-  name = "Blog"
+  name = "Posts"
   weight = 1
   url = "posts/"
 
 [[languages.en.menu.main]]
+  name = "Tags"
+  weight = 1
+  url = "tags/"
+
+[[languages.en.menu.main]]
   name = "Contact"
-  weight = 3
+  weight = 2
   url = "contact/"
+
+[[languages.en.menu.main]]
+  name = "Search"
+  weight = 3
+  url = "search/"
