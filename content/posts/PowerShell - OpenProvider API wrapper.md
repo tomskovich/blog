@@ -39,7 +39,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 19/08/2022 10:06:09
 
 ### Get-OPTransferToken
 
-Retrieves domain transfer key (EPP key) for one or multiple domains.
+Retrieves domain transfer key (EPP token) for one or multiple domains.
 
 
 ```powershell
