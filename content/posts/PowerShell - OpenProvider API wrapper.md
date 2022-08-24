@@ -16,7 +16,7 @@ Lately, OpenProvider has had multiple DNS outages. This has forced us to migrate
 To automate this process, I added the `Sync-OPDnsToAzure` function.
 
 
-I'll showcase some of the included functions below. The full module can be found on my [GitHub](https://github.com/tomskovich/Public)
+I'll showcase some of the included functions below. The full module can be found on my [GitHub](https://github.com/tomskovich/Public).
 
 ### Get-OPBearerToken
 
