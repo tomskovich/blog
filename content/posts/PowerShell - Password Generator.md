@@ -107,7 +107,7 @@ function New-Password {
         }
         # Create arraylist for output 
         $Passwords = New-Object System.Collections.ArrayList
-    } # end of "Begin" block
+    } # end Begin
 
     process {
         foreach ($i in 1..$Count) {
@@ -130,10 +130,10 @@ function New-Password {
             # Add password to collection but hide output
             [void] $Passwords.Add($Password)
         } # end Foreach
-    } # end of "Process" block
+    } # end Process
 
     end {
         return $Passwords
-    } # end of "End" block
+    } # end End
 }
 ```
