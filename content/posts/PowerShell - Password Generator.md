@@ -16,7 +16,6 @@ Some examples:
 New-Password -Count 2 -NumberCount 5 -CharacterCount 3
 ```
 ```txt
-# OUTPUT
 BridgeMarry#@$32968
 SilverSkill@#%83791
 ```
@@ -24,7 +23,6 @@ SilverSkill@#%83791
 New-Password -WordListFile 'C:\Temp\MyOwnCustomWordlist.txt'
 ```
 ```txt
-# OUTPUT
 CustomWords#7638
 ```
 
