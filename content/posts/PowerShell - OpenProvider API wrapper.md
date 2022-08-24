@@ -27,15 +27,7 @@ OpenProvider Bearer Tokens are valid for 24 hours. This function requests a new 
 ```powershell
 PS > Get-OPBearerToken
 ```
-```txt
-Enter username/password for OpenProvider API authentication:
-User: USERNAMEHERE
-Password for user usernamehere: *******
-
-Token                            CreationTime
------                            ------------
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 19/08/2022 10:06:09
-```
+![Get-OPBearerToken](/get-opbearertoken_example.png#center)
 
 ### Get-OPTransferToken
 
