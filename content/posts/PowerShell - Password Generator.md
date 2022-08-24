@@ -19,6 +19,8 @@ New-Password -Count 2 -NumberCount 5 -CharacterCount 3
 BridgeMarry#@$32968
 SilverSkill@#%83791
 ```
+
+
 ```powershell
 New-Password -WordListFile 'C:\Temp\MyOwnCustomWordlist.txt'
 ```
