@@ -45,7 +45,7 @@ Retrieves domain transfer key (EPP token) for one or multiple domains.
 ```powershell
 PS > Get-OPTransferToken -Domains 'tech-tom.com', 'liontech.nl'
 ```
-[Get-OPTransferToken](/get-optransfertoken_example.png)
+![Get-OPTransferToken](/get-optransfertoken_example.png)
 
 ### Sync-OPDnsToAzure
 
