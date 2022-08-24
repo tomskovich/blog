@@ -20,7 +20,7 @@ I'll showcase some of the included functions below. The full module can be found
 
 ### Get-OPBearerToken
 
-At its current state Openprovider API only supports Bearer Authentication which involves acquiring security tokens that are then passed in a request. 
+At its current state, Openprovider's API only supports Bearer Authentication which involves acquiring security tokens that are then passed in a request. 
 
 OpenProvider Bearer Tokens are valid for 24 hours. This function requests a new Bearer Token and saves it in a script variable. If the token is created less than 24 hours ago, the token will be reused.
 
@@ -45,12 +45,7 @@ Retrieves domain transfer key (EPP token) for one or multiple domains.
 ```powershell
 PS > Get-OPTransferToken -Domains 'tech-tom.com', 'liontech.nl'
 ```
-```
-Domain   Extension Owner        AuthCode
-------   --------- -----        --------
-tech-tom com       Tom de Leeuw XXXXXXXXXX
-liontech nl        Tom de Leeuw XXXXXXXXXX
-```
+[Get-OPTransferToken](/get-optransfertoken_example.png)
 
 ### Sync-OPDnsToAzure
 
