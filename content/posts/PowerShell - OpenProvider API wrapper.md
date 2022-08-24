@@ -58,18 +58,4 @@ When the "-Migrate" parameter is used, you'll be given the option to change the 
 ```powershell
 PS > Sync-OPDnsToAzure -domain 'tech-tom.com'
 ```
-```md
-Connected to Azure. Continuing...
-Account has permissions for Resource Group DNS. Continuing...
-Getting OpenProvider DNS zone for domain: tech-tom.com
-Getting OpenProvider NameServer group for domain: tech-tom.com
-=== Received the following domain information from OpenProvider. Please verify if this domain is correct.
-
-ID          : XXXXXXX
-Domain      : tech-tom.com
-NameServers : {ns1.openprovider.nl, ns2.openprovider.be, ns3.openprovider.eu}
-NSGroup     : dns-openprovider
-Owner       : Tom de Leeuw
-
-Press Enter to continue...:
-```
+![Sync-OPDnsToAzure](/sync-opdnstoazure_example.png#center)
