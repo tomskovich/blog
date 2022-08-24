@@ -16,9 +16,9 @@ Lately, OpenProvider has had multiple DNS outages. This has forced us to migrate
 To automate this process, I added the `Sync-OPDnsToAzure` function.
 
 
-I'll showcase some of the included functions below. The full module can be found on my [GitHub](https://github.com/tomskovich/Public).
+I'll showcase some of the included functions below. The full module can be found here: [GitHub](https://github.com/tomskovich/Public/tree/main/PowerShell/Modules/OpenProvider).
 
-### Get-OPBearerToken
+### Get-OPBearerToken (Private)
 
 At its current state, Openprovider's API only supports Bearer Authentication which involves acquiring security tokens that are then passed in a request. 
 
