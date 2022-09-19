@@ -46,7 +46,7 @@ apple_touch_icon = "apple-touch-icon.png"
 
 [params.profileMode]
 enabled = true
-title = "TECH-TOM"
+title = "TOM DE LEEUW"
 subtitle = "Automation Warrior"
 imageUrl = "github_avatar.jpg"
 imageWidth = 200
