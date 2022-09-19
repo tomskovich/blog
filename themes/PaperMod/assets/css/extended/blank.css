@@ -34,3 +34,15 @@ img[src$='#floatright']
     margin: 0.7rem;      /* this margin is totally up to you */
     /* whatever else styles you fancy here */
 }
+
+.buttons {
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.dark {
+    --theme: #171415;
+}
+
