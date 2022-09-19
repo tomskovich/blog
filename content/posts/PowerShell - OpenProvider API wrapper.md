@@ -18,7 +18,7 @@ To automate this process, I added the `Sync-OPDnsToAzure` function.
 
 I'll showcase some of the included functions below. The full module can be found here: [GitHub](https://github.com/tomskovich/Public/tree/main/PowerShell/Modules/OpenProvider).
 
-### Get-OPBearerToken (Private)
+## Get-OPBearerToken (Private)
 
 At its current state, Openprovider's API only supports Bearer Authentication which involves acquiring security tokens that are then passed in a request. 
 
@@ -29,7 +29,7 @@ PS > Get-OPBearerToken
 ```
 ![Get-OPBearerToken](/get-opbearertoken_example.png#center)
 
-### Get-OPTransferToken
+## Get-OPTransferToken
 
 Retrieves domain transfer key (EPP token) for one or multiple domains.
 
@@ -39,7 +39,7 @@ PS > Get-OPTransferToken -Domains 'tech-tom.com', 'liontech.nl'
 ```
 ![Get-OPTransferToken](/get-optransfertoken_example.png#center)
 
-### Sync-OPDnsToAzure
+## Sync-OPDnsToAzure
 
 Copies DNS zone(s) from OpenProvider to Azure. Also creates DNS zone in Azure if it does not exist.
 
