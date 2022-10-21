@@ -4,7 +4,7 @@ date: 2022-10-21T10:45:05+02:00
 draft: false
 ---
 
-### Installation
+## Installation
 
 `IMPORTANT: This module is still a work in progress!`
 `Please use at your own risk.`
@@ -29,13 +29,13 @@ You can install the ComputerCleanup module directly from the [PowerShell Gallery
 To install the module manually, or if you are using an earlier version of PowerShell that doesn't support Install-Module, simply download the module from GitHub, and copy the ComputerCleanup folder into your Modules folder. 
 If you're not sure where your Modules folder is, open up a PowerShell prompt and type $env:PSModulePath.
 
-### Updating
+## Updating
 
 ```powershell
 Update-Module -Name ComputerCleanup
 ```
 
-### Examples
+## Examples
 
 Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. Here's some quick examples:
 
@@ -63,15 +63,15 @@ Therefore, I've added warnings for some parameters. Example:
 ```
 ![paramwarnings](/paramwarnings.png#center)
 
-#### All parameters for function "Invoke-ComputerCleanup"
+### All parameters for function "Invoke-ComputerCleanup"
 
-##### -Days (Default: 30)
+#### -Days (Default: 30)
 	- Only remove files/folders that are older than $Days old. 
 		- This is based on both file CreationTime AND LastWriteTime.
 	- This parameter does NOT apply to the following options:
 		- `-BrowserCache`, `-TeamsCache`, `-SoftwareDistribution`, `-FontCache`
 
-##### CleanManager
+#### CleanManager
 	- Runs the Windows Disk Cleanup tool with the following options enabled:
 		- Active Setup Temp Folders
 		- BranchCache
@@ -101,7 +101,7 @@ Therefore, I've added warnings for some parameters. Example:
 		- Windows Error Reporting System Queue Files
 		- Windows Upgrade Log Files
 
-##### UserTemp
+#### UserTemp
 	- Removes temp files in User profiles that are older than $Days days old. Default locations:
 		- USERPROFILE\AppData\Local\Microsoft\Windows\WER
 		- USERPROFILE\AppData\Local\Microsoft\Windows\INetCache
@@ -110,36 +110,36 @@ Therefore, I've added warnings for some parameters. Example:
 		- USERPROFILE\AppData\Local\CrashDumps
 		- USERPROFILE\AppData\Local\Temp
 
-##### SystemTemp
+#### SystemTemp
 	- Removes temp files in system that are older than $Days days old. Default locations:
 		- C:\Windows\Temp
 		- C:\Windows\Logs\CBS
 		- C:\Windows\Downloaded Program Files
 		- C:\ProgramData\Microsoft\Windows\WER
 
-##### SoftwareDistribution
+#### SoftwareDistribution
 	- Cleans the "C:\Windows\SoftwareDistribution\Downloads" folder.
 
-##### FontCache
+#### FontCache
 	- Clears user font cache files located in "C:\Windows\ServiceProfiles\LocalService\AppData\Local"
 
-##### BrowserCache 
+#### BrowserCache 
 	- Clears browser cache files for all users.
 	- Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
 	- WARNING: This will stop ALL running browser processes. Running outside of working hours is advised.
 
-##### TeamsCache
+#### TeamsCache
 	- Clears Microsoft Teams cache files for all users.
     - WARNING: This will stop ALL running Teams processes. Running outside of working hours is advised.
 
-##### RecycleBin
+#### RecycleBin
 	- Clears Recycle Bin.
 		- Only remove files/folders that are older than $Days old. 
 		- This is based on both file CreationTime AND LastWriteTime.
 	- This parameter does NOT apply to the following options:
 		- -BrowserCache, -TeamsCache, -SoftwareDistribution, -FontCache
 
-# Functions\Public
+## Functions\Public
 
 - [Invoke-ComputerCleanup](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Invoke-ComputerCleanup.ps1) 
     - Main controller function to invoke one or multiple cleanup functions included in this module.
@@ -160,7 +160,7 @@ Therefore, I've added warnings for some parameters. Example:
 - [Optimize-UserProfiles](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Optimize-UserProfiles.ps1) 
     - Removes common temporary files and folders older than $Days days old from user profiles.
 
-# Functions\Private
+## Functions\Private
 
 - [Assert-RunAsAdministrator](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Assert-RunAsAdministrator.ps1) 
     - Verifies if script/function is running with Administrator privileges.
