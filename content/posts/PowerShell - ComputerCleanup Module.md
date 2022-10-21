@@ -1,6 +1,7 @@
 ---
 title: "PowerShell - ComputerCleanup Module"
 date: 2022-10-21T10:45:05+02:00
+tags: ['Powershell', 'Module', 'Disk']
 draft: false
 ---
 # ComputerCleanup
@@ -172,3 +173,5 @@ Therefore, I've added warnings for some parameters. Example:
 		- This is based on both file CreationTime AND LastWriteTime.
 	- This parameter does NOT apply to the following options:
 		- -BrowserCache, -TeamsCache, -SoftwareDistribution, -FontCache
+
+I will actively maintain this module, so feel free to leave a comment or feature request in the comments or send in a pull request on GitHub.
