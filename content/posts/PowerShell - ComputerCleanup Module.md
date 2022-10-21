@@ -3,23 +3,26 @@ title: "PowerShell - ComputerCleanup Module"
 date: 2022-10-21T10:45:05+02:00
 draft: false
 ---
-
-## Installation
+# ComputerCleanup
 
 `IMPORTANT: This module is still a work in progress!`
+
 `Please use at your own risk.`
 
-You can install the ComputerCleanup module directly from the [PowerShell Gallery](https://www.powershellgallery.com/packages/ComputerCleanup/), or download it from my [GitHub](https://github.com/tomskovich/ComputerCleanup)
+This PowerShell module is for freeing up disk space on Windows computers.
+I frequently use this on some RDS servers, and my local machine.
 
-More information can be found on my (Blog)[https://tech-tom.com/posts/powershell-computercleanup-module/]
+You can install the ComputerCleanup module directly from the [PowerShell Gallery](https://www.powershellgallery.com/packages/ComputerCleanup/).
+
+## Installation
 
 ```powershell
 # One time setup
     Install-Module ComputerCleanup -AllowClobber -Force 
-    #Force and AllowClobber aren't necessary, but they do skip errors in case some appear.
+    # -Force and -AllowClobber aren't necessary, but they do skip errors in case some appear.
 
 # Import the module.
-    Import-Module ComputerCleanup
+    Import-Module ComputerCleanup -Force
 
 # Get commands in the module
     Get-Command -Module ComputerCleanup
@@ -74,12 +77,12 @@ Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. He
     Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -RecycleBin 
 ```
 
-Will do the following:
-    - Run the Windows Disk Cleanup tool
-    - Remove temp files in User profiles that are older than 30 days old.
-    - Remove temp files in system that are older than 30 days old.
-    - Clean the "C:\Windows\SoftwareDistribution\Downloads" folder.
-    - Empty Recycle Bin.
+####
+	- Runs the Windows Disk Cleanup tool
+	- Removes temp files in User profiles that are older than 30 days old.
+	- Removes temp files in system that are older than 30 days old.
+	- Cleans the "C:\Windows\SoftwareDistribution\Downloads" folder.
+	- Empties Recycle Bin.
 
 You'll be prompted for confirmation at the beginning, and there will be a report at the end.
 
@@ -102,7 +105,7 @@ Therefore, I've added warnings for some parameters. Example:
 	- This parameter does NOT apply to the following options:
 		- `-BrowserCache`, `-TeamsCache`, `-SoftwareDistribution`, `-FontCache`
 
-#### CleanManager
+#### -CleanManager
 	- Runs the Windows Disk Cleanup tool with the following options enabled:
 		- Active Setup Temp Folders
 		- BranchCache
@@ -132,7 +135,7 @@ Therefore, I've added warnings for some parameters. Example:
 		- Windows Error Reporting System Queue Files
 		- Windows Upgrade Log Files
 
-#### UserTemp
+#### -UserTemp
 	- Removes temp files in User profiles that are older than $Days days old. Default locations:
 		- USERPROFILE\AppData\Local\Microsoft\Windows\WER
 		- USERPROFILE\AppData\Local\Microsoft\Windows\INetCache
@@ -141,29 +144,29 @@ Therefore, I've added warnings for some parameters. Example:
 		- USERPROFILE\AppData\Local\CrashDumps
 		- USERPROFILE\AppData\Local\Temp
 
-#### SystemTemp
+#### -SystemTemp
 	- Removes temp files in system that are older than $Days days old. Default locations:
 		- C:\Windows\Temp
 		- C:\Windows\Logs\CBS
 		- C:\Windows\Downloaded Program Files
 		- C:\ProgramData\Microsoft\Windows\WER
 
-#### SoftwareDistribution
+#### -SoftwareDistribution
 	- Cleans the "C:\Windows\SoftwareDistribution\Downloads" folder.
 
-#### FontCache
+#### -FontCache
 	- Clears user font cache files located in "C:\Windows\ServiceProfiles\LocalService\AppData\Local"
 
-#### BrowserCache 
+#### -BrowserCache 
 	- Clears browser cache files for all users.
 	- Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
 	- WARNING: This will stop ALL running browser processes. Running outside of working hours is advised.
 
-#### TeamsCache
+#### -TeamsCache
 	- Clears Microsoft Teams cache files for all users.
     - WARNING: This will stop ALL running Teams processes. Running outside of working hours is advised.
 
-#### RecycleBin
+#### -RecycleBin
 	- Clears Recycle Bin.
 		- Only remove files/folders that are older than $Days old. 
 		- This is based on both file CreationTime AND LastWriteTime.
