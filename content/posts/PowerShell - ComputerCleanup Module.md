@@ -1,3 +1,9 @@
+---
+title: "PowerShell - ComputerCleanup Module"
+date: 2022-10-21T10:45:05+02:00
+draft: false
+---
+
 ### Installation
 
 `IMPORTANT: This module is still a work in progress!`
