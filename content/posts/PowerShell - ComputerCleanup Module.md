@@ -4,8 +4,6 @@ date: 2022-10-21T10:45:05+02:00
 tags: ['Powershell', 'Module', 'Disk']
 draft: false
 ---
-# ComputerCleanup
-
 `IMPORTANT: This module is still a work in progress!`
 
 `Please use at your own risk.`
