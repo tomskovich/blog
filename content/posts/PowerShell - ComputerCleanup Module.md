@@ -11,6 +11,8 @@ draft: false
 
 You can install the ComputerCleanup module directly from the [PowerShell Gallery](https://www.powershellgallery.com/packages/ComputerCleanup/), or download it from my [GitHub](https://github.com/tomskovich/ComputerCleanup)
 
+More information can be found on my (Blog)[https://tech-tom.com/posts/powershell-computercleanup-module/]
+
 ```powershell
 # One time setup
     Install-Module ComputerCleanup -AllowClobber -Force 
@@ -24,16 +26,45 @@ You can install the ComputerCleanup module directly from the [PowerShell Gallery
 
 # Get help for the module
     Get-Help ComputerCleanup -Full
+
+# Updating
+    Update-Module -Name ComputerCleanup
 ```
 
 To install the module manually, or if you are using an earlier version of PowerShell that doesn't support Install-Module, simply download the module from GitHub, and copy the ComputerCleanup folder into your Modules folder. 
 If you're not sure where your Modules folder is, open up a PowerShell prompt and type $env:PSModulePath.
 
-## Updating
+## Functions\Public
 
-```powershell
-Update-Module -Name ComputerCleanup
-```
+- [Invoke-ComputerCleanup](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Invoke-ComputerCleanup.ps1) 
+    - Main controller function to invoke one or multiple cleanup functions included in this module.
+- [Clear-BrowserCache](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-BrowserCache.ps1)
+	- Removes browser cache files for all users.
+    - Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
+- [Clear-FontCache](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-FontCache.ps1)
+	- Removes user font cache files located in "C:\Windows\ServiceProfiles\LocalService\AppData\Local\"
+- [Clear-SoftwareDistribution](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-SoftwareDistribution.ps1)
+    - Clears the "C:\Windows\SoftwareDistribution\Downloads" folder.
+- [Clear-TeamsCache](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-TeamsCache.ps1) 
+    - Removes Microsoft Teams cache files for all users.
+- [Invoke-CleanManager](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Invoke-CleanManager.ps1) 
+    - Runs the Windows Disk Cleanup tool with predefined options.
+- [Optimize-SystemFiles](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Optimize-SystemFiles.ps1) 
+    - Removes common system-wide temporary files and folders older than $Days old.
+    - OPTIONAL: Clears Windows Recycle Bin
+- [Optimize-UserProfiles](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Optimize-UserProfiles.ps1) 
+    - Removes common temporary files and folders older than $Days days old from user profiles.
+
+## Functions\Private
+
+- [Assert-RunAsAdministrator](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Assert-RunAsAdministrator.ps1) 
+    - Verifies if script/function is running with Administrator privileges.
+- [Get-DiskSpace](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Get-DiskSpace.ps1)
+    - Gets available disk space. Used for reporting.
+- [Get-UserFolders](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Get-Userfolders.ps1)
+    - Gets all user folders, excluding Administrators and Default/Public users
+- [Start-Logging](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Start-Logging.ps1)
+    - Logging function. Very basic wrapper arround Start-Transcript
 
 ## Examples
 
@@ -138,35 +169,3 @@ Therefore, I've added warnings for some parameters. Example:
 		- This is based on both file CreationTime AND LastWriteTime.
 	- This parameter does NOT apply to the following options:
 		- -BrowserCache, -TeamsCache, -SoftwareDistribution, -FontCache
-
-## Functions\Public
-
-- [Invoke-ComputerCleanup](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Invoke-ComputerCleanup.ps1) 
-    - Main controller function to invoke one or multiple cleanup functions included in this module.
-- [Clear-BrowserCache](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-BrowserCache.ps1)
-	- Removes browser cache files for all users.
-    - Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
-- [Clear-FontCache](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-FontCache.ps1)
-	- Removes user font cache files located in "C:\Windows\ServiceProfiles\LocalService\AppData\Local\"
-- [Clear-SoftwareDistribution](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-SoftwareDistribution.ps1)
-    - Clears the "C:\Windows\SoftwareDistribution\Downloads" folder.
-- [Clear-TeamsCache](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Clear-TeamsCache.ps1) 
-    - Removes Microsoft Teams cache files for all users.
-- [Invoke-CleanManager](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Invoke-CleanManager.ps1) 
-    - Runs the Windows Disk Cleanup tool with predefined options.
-- [Optimize-SystemFiles](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Optimize-SystemFiles.ps1) 
-    - Removes common system-wide temporary files and folders older than $Days old.
-    - OPTIONAL: Clears Windows Recycle Bin
-- [Optimize-UserProfiles](https://github.com/tomskovich/ComputerCleanup/blob/main/Public/Optimize-UserProfiles.ps1) 
-    - Removes common temporary files and folders older than $Days days old from user profiles.
-
-## Functions\Private
-
-- [Assert-RunAsAdministrator](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Assert-RunAsAdministrator.ps1) 
-    - Verifies if script/function is running with Administrator privileges.
-- [Get-DiskSpace](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Get-DiskSpace.ps1)
-    - Gets available disk space. Used for reporting.
-- [Get-UserFolders](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Get-Userfolders.ps1)
-    - Gets all user folders, excluding Administrators and Default/Public users
-- [Start-Logging](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Start-Logging.ps1)
-    - Logging function. Very basic wrapper arround Start-Transcript
