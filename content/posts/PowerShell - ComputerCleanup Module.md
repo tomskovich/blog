@@ -77,11 +77,11 @@ Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. He
     Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -RecycleBin 
 ```
 ```txt
-	- Runs the Windows Disk Cleanup tool.
-	- Removes temp files in User profiles that are older than 30 days old.
-	- Removes temp files in system that are older than 30 days old.
-	- Cleans up the "C:\Windows\SoftwareDistribution\Download" folder.
-	- Clears the Windows Recycle Bin
+	- [x] Runs the Windows Disk Cleanup tool.
+	- [x] Removes temp files in User profiles that are older than 30 days old.
+	- [x] Removes temp files in system that are older than 30 days old.
+	- [x] Cleans up the "C:\Windows\SoftwareDistribution\Download" folder.
+	- [x] Clears the Windows Recycle Bin
 ```
 
 You'll be prompted for confirmation at the beginning, and there will be a report at the end.
@@ -100,9 +100,9 @@ Therefore, I've added warnings for some parameters. Example:
 ### All parameters for function "Invoke-ComputerCleanup"
 
 #### -Days (Default: 30)
-	- Only remove files/folders that are older than $Days old. 
+	- [x] Only remove files/folders that are older than $Days old. 
 		- This is based on both file CreationTime AND LastWriteTime.
-	- This parameter does NOT apply to the following options:
+	- [x] This parameter does NOT apply to the following options:
 		- `-BrowserCache`, `-TeamsCache`, `-SoftwareDistribution`, `-FontCache`
 
 #### -CleanManager
@@ -145,7 +145,7 @@ Therefore, I've added warnings for some parameters. Example:
 		- USERPROFILE\AppData\Local\Temp
 
 #### -SystemTemp
-	- Removes temp files in system that are older than $Days days old. Default locations:
+	- [x] Removes temp files in system that are older than $Days days old. Default locations:
 		- C:\Windows\Temp
 		- C:\Windows\Logs\CBS
 		- C:\Windows\Downloaded Program Files
@@ -164,7 +164,7 @@ Therefore, I've added warnings for some parameters. Example:
 
 #### -TeamsCache
 	- Clears Microsoft Teams cache files for all users.
-	- WARNING: This will stop ALL running Teams processes. Running outside of working hours is advised.
+	- <mark>WARNING:</mark> This will stop ALL running Teams processes. Running outside of working hours is advised.
 
 #### -RecycleBin
 	- Clears Recycle Bin.
