@@ -158,13 +158,13 @@ Therefore, I've added warnings for some parameters. Example:
 	- Clears user font cache files located in "C:\Windows\ServiceProfiles\LocalService\AppData\Local"
 
 #### -BrowserCache 
-	- Clears browser cache files for all users.
-	- Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
-	- WARNING: This will stop ALL running browser processes. Running outside of working hours is advised.
+- Clears browser cache files for all users.
+- Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
+- WARNING: This will stop ALL running browser processes. Running outside of working hours is advised.
 
 #### -TeamsCache
 	- Clears Microsoft Teams cache files for all users.
-	- <mark>WARNING:</mark> This will stop ALL running Teams processes. Running outside of working hours is advised.
+	- :warning: This will stop ALL running Teams processes. Running outside of working hours is advised.
 
 #### -RecycleBin
 	- Clears Recycle Bin.
