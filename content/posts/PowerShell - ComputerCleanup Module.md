@@ -153,29 +153,24 @@ Therefore, I've added warnings for some parameters. Example:
 
 #### -SoftwareDistribution
 	- Cleans the "C:\Windows\SoftwareDistribution\Downloads" folder.
+
 #### -FontCache
-```txt
 	- Clears user font cache files located in "C:\Windows\ServiceProfiles\LocalService\AppData\Local"
-```
+
 #### -BrowserCache 
-```txt
 	- Clears browser cache files for all users.
 	- Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
 	- WARNING: This will stop ALL running browser processes. Running outside of working hours is advised.
-```
+
 #### -TeamsCache
-```txt
 	- Clears Microsoft Teams cache files for all users.
-    - WARNING: This will stop ALL running Teams processes. Running outside of working hours is advised.
-```
+	- WARNING: This will stop ALL running Teams processes. Running outside of working hours is advised.
 
 #### -RecycleBin
-```txt
 	- Clears Recycle Bin.
 		- Only remove files/folders that are older than $Days old. 
 		- This is based on both file CreationTime AND LastWriteTime.
 	- This parameter does NOT apply to the following options:
 		- -BrowserCache, -TeamsCache, -SoftwareDistribution, -FontCache
-```
 
 I will actively maintain this module, so feel free to leave a comment or feature request in the comments or send in a pull request on GitHub.
