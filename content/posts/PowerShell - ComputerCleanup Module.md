@@ -76,12 +76,12 @@ Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. He
 ``` powershell
     Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -RecycleBin 
 ```
-
-This will do the following:
 ```txt
-	- Runs the Windows Disk Cleanup tool:
+	- Runs the Windows Disk Cleanup tool.
 	- Removes temp files in User profiles that are older than 30 days old.
 	- Removes temp files in system that are older than 30 days old.
+	- Cleans up the "C:\Windows\SoftwareDistribution\Download" folder.
+	- Clears the Windows Recycle Bin
 ```
 
 You'll be prompted for confirmation at the beginning, and there will be a report at the end.
