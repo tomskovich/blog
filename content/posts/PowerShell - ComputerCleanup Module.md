@@ -97,12 +97,12 @@ Therefore, I've added warnings for some parameters. Example:
 ```
 ![paramwarnings](/paramwarnings.png#center)
 
-### All parameters for function "Invoke-ComputerCleanup"
+## All parameters for function "Invoke-ComputerCleanup"
 
-#### -Days (Default: 30)
-- [x] Only remove files/folders that are older than $Days old. 
+### -Days (Default: 30)
+- Only remove files/folders that are older than $Days old. 
 	- This is based on both file CreationTime AND LastWriteTime.
-- [x] This parameter does NOT apply to the following options:
+- This parameter does NOT apply to the following options:
 	- `-BrowserCache`, `-TeamsCache`, `-SoftwareDistribution`, `-FontCache`
 
 #### -CleanManager
@@ -145,17 +145,17 @@ Therefore, I've added warnings for some parameters. Example:
 		- USERPROFILE\AppData\Local\Temp
 
 #### -SystemTemp
-- [x] Removes temp files in system that are older than $Days days old. Default locations:
-	- C:\Windows\Temp
-	- C:\Windows\Logs\CBS
-	- C:\Windows\Downloaded Program Files
-	- C:\ProgramData\Microsoft\Windows\WER
+- Removes temp files in system that are older than $Days days old. Default locations:
+	- `C:\Windows\Temp`
+	- `C:\Windows\Logs\CBS`
+	- `C:\Windows\Downloaded Program Files`
+	- `C:\ProgramData\Microsoft\Windows\WER`
 
 #### -SoftwareDistribution
 	- Cleans the "C:\Windows\SoftwareDistribution\Downloads" folder.
 
 #### -FontCache
-	- Clears user font cache files located in "C:\Windows\ServiceProfiles\LocalService\AppData\Local"
+	- Clears user font cache files located in `"C:\Windows\ServiceProfiles\LocalService\AppData\Local"`
 
 #### -BrowserCache 
 - Clears browser cache files for all users.
