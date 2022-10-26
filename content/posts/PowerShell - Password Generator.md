@@ -3,7 +3,7 @@ title: "PowerShell - Password Generator"
 date: 2022-08-17T12:50:06+02:00
 tags: ['Powershell', 'Function']
 draft: false
-weight: 1
+#weight: 1
 ---
 
 This PowerShell function generates one or more "random" human-readable passwords, with some options for complexity and language.
