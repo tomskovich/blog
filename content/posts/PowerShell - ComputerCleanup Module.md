@@ -100,10 +100,10 @@ Therefore, I've added warnings for some parameters. Example:
 ### All parameters for function "Invoke-ComputerCleanup"
 
 #### -Days (Default: 30)
-	- [x] Only remove files/folders that are older than $Days old. 
-		- This is based on both file CreationTime AND LastWriteTime.
-	- [x] This parameter does NOT apply to the following options:
-		- `-BrowserCache`, `-TeamsCache`, `-SoftwareDistribution`, `-FontCache`
+- [x] Only remove files/folders that are older than $Days old. 
+	- This is based on both file CreationTime AND LastWriteTime.
+- [x] This parameter does NOT apply to the following options:
+	- `-BrowserCache`, `-TeamsCache`, `-SoftwareDistribution`, `-FontCache`
 
 #### -CleanManager
 	- Runs the Windows Disk Cleanup tool with the following options enabled:
@@ -145,11 +145,11 @@ Therefore, I've added warnings for some parameters. Example:
 		- USERPROFILE\AppData\Local\Temp
 
 #### -SystemTemp
-	- [x] Removes temp files in system that are older than $Days days old. Default locations:
-		- C:\Windows\Temp
-		- C:\Windows\Logs\CBS
-		- C:\Windows\Downloaded Program Files
-		- C:\ProgramData\Microsoft\Windows\WER
+- [x] Removes temp files in system that are older than $Days days old. Default locations:
+	- C:\Windows\Temp
+	- C:\Windows\Logs\CBS
+	- C:\Windows\Downloaded Program Files
+	- C:\ProgramData\Microsoft\Windows\WER
 
 #### -SoftwareDistribution
 	- Cleans the "C:\Windows\SoftwareDistribution\Downloads" folder.
@@ -160,7 +160,7 @@ Therefore, I've added warnings for some parameters. Example:
 #### -BrowserCache 
 - Clears browser cache files for all users.
 - Browsers: Microsoft Edge, Internet Explorer, Google Chrome and Firefox.
-- WARNING: This will stop ALL running browser processes. Running outside of working hours is advised.
+- :warning: This will stop ALL running browser processes. Running outside of working hours is advised.
 
 #### -TeamsCache
 	- Clears Microsoft Teams cache files for all users.
