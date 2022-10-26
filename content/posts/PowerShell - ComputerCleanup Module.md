@@ -71,8 +71,6 @@ If you're not sure where your Modules folder is, open up a PowerShell prompt and
 
 ### Examples
 
-	- Test
-
 Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. Here's some quick examples:
 
 ``` powershell
@@ -80,11 +78,11 @@ Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. He
 ```
 
 This will do the following:
-
+```sql
 	- Runs the Windows Disk Cleanup tool:
 	- Removes temp files in User profiles that are older than 30 days old.
 	- Removes temp files in system that are older than 30 days old.
-
+```
 
 You'll be prompted for confirmation at the beginning, and there will be a report at the end.
 
