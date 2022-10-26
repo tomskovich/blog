@@ -80,8 +80,8 @@ Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. He
 #### -CleanManager
 	- Runs the Windows Disk Cleanup tool with the following options enabled:
 
-#### -Will do the following:
-	- Runs the Windows Disk Cleanup tool
+#### -Will do the following
+	- Runs the Windows Disk Cleanup tool:
 	- Removes temp files in User profiles that are older than 30 days old.
 	- Removes temp files in system that are older than 30 days old.
 
