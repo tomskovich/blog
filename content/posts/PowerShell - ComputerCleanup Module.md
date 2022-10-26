@@ -77,6 +77,9 @@ Generally, the only function/command you'll need is `Invoke-ComputerCleanup`. He
     Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -RecycleBin 
 ```
 
+#### -CleanManager
+	- Runs the Windows Disk Cleanup tool with the following options enabled:
+
 #### -Days (Default: 30)
 	- Runs the Windows Disk Cleanup tool
 
