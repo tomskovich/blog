@@ -35,7 +35,7 @@ Update-Module -Name ComputerCleanup
 
 To install the module manually, or if you are using an earlier version of PowerShell that doesn't support Install-Module, simply download the module from GitHub, and copy the ComputerCleanup folder into your Modules folder. 
 
-If you're not sure where your Modules folder is, open up a PowerShell prompt and type $env:PSModulePath.
+If you're not sure where your Modules folder is, open up a PowerShell prompt and type `$env:PSModulePath`.
 
 ## Functions\Public
 
@@ -67,9 +67,9 @@ If you're not sure where your Modules folder is, open up a PowerShell prompt and
 - [Get-UserFolders](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Get-Userfolders.ps1)
     - Gets all user folders, excluding Administrators and Default/Public users
 - [Start-Logging](https://github.com/tomskovich/ComputerCleanup/blob/main/Private/Start-Logging.ps1)
-    - Logging function. Very basic wrapper arround Start-Transcript
+    - Logging function. Very basic wrapper around `Start-Transcript`
 
-### Examples
+### Examples/Usage
 
 Generally, the only function/command you'll need is `Invoke-ComputerCleanup`.
 
