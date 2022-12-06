@@ -77,7 +77,7 @@ I'll give two recommended parameter sets. One for running on a live/in-use envir
 
 #### LIVE environment:
 ``` powershell
-    Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -RecycleBin 
+Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -RecycleBin 
 ```
 ```txt
 	- Runs the Windows Disk Cleanup tool.
@@ -89,7 +89,7 @@ I'll give two recommended parameter sets. One for running on a live/in-use envir
 #### Outside of working hours:
 - :warning: This parameter set will close running processes! Use with caution.
 ``` powershell
-    Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -BrowserCache -TeamsCache -FontCache -RecycleBin 
+Invoke-ComputerCleanup -Days 30 -UserTemp -SystemTemp -CleanManager -SoftwareDistribution -BrowserCache -TeamsCache -FontCache -RecycleBin 
 ```
 ```txt
 	- Runs the Windows Disk Cleanup tool.
@@ -111,7 +111,7 @@ Some parameters will stop some processes, which can be impactful in live environ
 Therefore, I've added warnings for some parameters. Example:
 
 ``` powershell
-    Invoke-ComputerCleanup -Days 30 -BrowserCache -TeamsCache -UserDownloads
+Invoke-ComputerCleanup -Days 30 -BrowserCache -TeamsCache -UserDownloads
 ```
 ![paramwarnings](/paramwarnings.png#center)
 
